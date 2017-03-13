@@ -24,5 +24,10 @@ namespace Assignment
         {
             InitializeComponent();
         }
+
+        private void search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
