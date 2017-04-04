@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace Assignment
 {
-    internal class Employee_info
+    public class Employee_info
     {
         private string _name; // имя сотрудника
 
@@ -16,7 +18,7 @@ namespace Assignment
         public string Position
         {
             get { return _position; }
-            set { _position = value; }
+             set { _position = value; }
         }
 
         private string _department; // отдел
@@ -26,6 +28,8 @@ namespace Assignment
             get { return _department; }
             set { _department = value; }
         }
+
+        public static List<Employee_info> ItemsSource { get; internal set; }
 
         public Employee_info (string name, string position, string department)
         {

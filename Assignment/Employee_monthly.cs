@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Assignment
 {
-    public class Employee_monthly
+    public class Employee_monthly 
     {
         private string _arrival; // время прихода на работу (среднее за месяц)
 
@@ -34,15 +34,19 @@ namespace Assignment
             get { return _missed; }
             set { _missed = value; }
         }
-        public Employee_monthly( string arrival, string leaving, string workday, string missed )
+
+        
+        /* public Employee_monthly(string name, string position, string department, string arrival, string leaving, string workday, string missed)
         {
-           
+            Name = name;
+            Department = department;
+            Position = position;
             _arrival = arrival;
             _leaving = leaving;
             _workday = workday;
             _missed = missed;
 
-        }
+        } */
     }
     
 }

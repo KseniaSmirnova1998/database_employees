@@ -20,9 +20,16 @@ namespace Assignment
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Employee_info> Employees = new List<Employee_info>();
+
         public MainWindow()
         {
             InitializeComponent();
+            Employees.Add(new Employee_info("Иван Иванов", "Менеджер", "Отдел кадров"));
+            Employees.Add(new Employee_info("Анна Петрова", "Программист", "Отдел разработки"));
+
+            Employee_info.ItemsSource = Employees;
+            listView.ItemsSource = Employees;
         }
 
         private void search_TextChanged(object sender, TextChangedEventArgs e)
