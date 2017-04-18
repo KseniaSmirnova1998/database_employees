@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="Добавление нового сотрудника" Height="350" Width="500" Background="#FFE1F3FF">
     <Grid>
-        <TextBox x:Name="add_name" Foreground="DarkGray" Margin="10,74,202,223" FontSize="13">Введите имя и фамилию</TextBox>
-        <ComboBox x:Name="comboBox_department" HorizontalAlignment="Left" Margin="10,191,0,0" VerticalAlignment="Top" Width="280" Height="24">Выберите отдел</ComboBox>
-        <Label x:Name="label_department" Content="Укажите отдел:" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" Width="200"/>
-        <TextBox x:Name="add_position" HorizontalAlignment="Left" Height="22" Margin="10,120,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="280" Foreground="DarkGray" FontSize="13">Укажите должность</TextBox>
+        <TextBox x:Name="textbox_name" Foreground="DarkGray" Margin="106,79,106,218" FontSize="13" Text="Введите имя и фамилию"/>
+        <ComboBox x:Name="comboBox_department" HorizontalAlignment="Left" Margin="106,203,0,0" VerticalAlignment="Top" Width="280" Height="24">Выберите отдел</ComboBox>
+        <Label x:Name="label_department" Content="Укажите отдел:" HorizontalAlignment="Left" Margin="106,167,0,0" VerticalAlignment="Top" Width="212" Height="31"/>
+        <TextBox x:Name="textbox_position" HorizontalAlignment="Left" Height="22" Margin="106,126,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="280" Foreground="DarkGray" FontSize="13" Text="Укажите должность"/>
         <Label x:Name="label_info" Content="Введите информацию о новом сотруднике."  Margin="10,21,0,0" VerticalAlignment="Top" 
                HorizontalAlignment="Left" Width="472" Height="31" FontSize="14"/>
         <Button x:Name="button_add" Content="Добавить" HorizontalAlignment="Left" Margin="72,262,0,0" VerticalAlignment="Top" Width="130" Height="33" Background="#FFDFE2EC"/>
