@@ -43,13 +43,7 @@ namespace Assignment
             set { _leaving = value; }
         }
 
-        // private string _workday; // средняя длина рабочего дня (за месяц)
-
-        // public string Workday
-       //  {
-           //  get { return _workday; }
-           //  set { _workday = value; }
-       //  }
+        
 
         private int _missed; // среднее количество пропущенных дней (за месяц)
 
@@ -67,7 +61,6 @@ namespace Assignment
             _position = position;
             _arrival = arrival;
             _leaving = leaving;
-            // _workday = workday;
             _missed = missed;
 
         } 

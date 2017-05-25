@@ -55,11 +55,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Employee_add.xaml">
+    <Compile Include="EditPage.xaml.cs">
+      <DependentUpon>EditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_addPage.xaml.cs">
+      <DependentUpon>Employee_addPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View_OnlyPage.xaml.cs">
+      <DependentUpon>View_OnlyPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="EditPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Log_In.xaml">
+    <Page Include="Employee_addPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -79,13 +88,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Employee_add.xaml.cs">
-      <DependentUpon>Employee_add.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Employee_monthly.cs" />
-    <Compile Include="Log_In.xaml.cs">
-      <DependentUpon>Log_In.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Log_inPage.xaml.cs">
       <DependentUpon>Log_inPage.xaml</DependentUpon>
     </Compile>
@@ -96,6 +99,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View_OnlyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages.cs" />

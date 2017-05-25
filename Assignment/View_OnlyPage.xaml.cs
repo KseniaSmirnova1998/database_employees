@@ -13,38 +13,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Xml.Serialization;
 
 namespace Assignment
 {
     /// <summary>
-    /// Логика взаимодействия для MainPage.xaml
+    /// Логика взаимодействия для View_OnlyPage.xaml
     /// </summary>
-    
-    public partial class MainPage : Page
+    public partial class View_OnlyPage : Page
     {
         List<Employee_monthly> Employees = new List<Employee_monthly>();
         const string FileEmployees = "employees.txt";
 
-        public MainPage()
+        public View_OnlyPage()
         {
-
             InitializeComponent();
-
-            
             Load();
 
             Employee_monthly.ItemsSource = Employees;
             listView_Employees.ItemsSource = Employees;
-           
-
         }
-        private void grid_load(object sender, RoutedEventArgs e)
-        {
-            Load();
-            listView_Employees.ItemsSource = Employees;
-            
-        }  
 
         public List<Employee_monthly> FindEmployees(string input)
         {
@@ -65,36 +52,9 @@ namespace Assignment
             Save();
         }
 
-
-
-        private void buttonAdd_Click(object sender, RoutedEventArgs e)
+        private void buttonLogin_Click(object sender, RoutedEventArgs e)
         {
-            
-            Save();
-            NavigationService.Navigate(Pages.Employee_addPage);
-            
-           
-        }
-
-        private void buttonDelete_Click(object sender, RoutedEventArgs e)
-        {
-            if (listView_Employees.SelectedIndex != -1)
-            {
-                
-                Employees.Remove(Employees[listView_Employees.SelectedIndex]);
-                Save();
-                
-                listView_Employees.Items.Refresh();
-                
-                
-               
-            }
-        }
-
-        private void listView_Employees_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-            buttonDelete.IsEnabled = listView_Employees.SelectedIndex != -1;
+            NavigationService.Navigate(Pages.Log_inPage);
         }
 
         private void Save()
@@ -137,16 +97,49 @@ namespace Assignment
             listView_Employees.Items.Refresh();
         }
 
-        private void buttonChange_Click(object sender, RoutedEventArgs e)
+        private void buttonDelete_Click(object sender, RoutedEventArgs e)
         {
-            if (listView_Employees.SelectedIndex != -1)
+            MessageBoxResult res = MessageBox.Show("Необходим вход в систему.", "Для получения полного доступа к системе необходимо войти.", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+            if (res == MessageBoxResult.OK)
             {
-                Pages.EditPage.EmployeeEdit = Employees[listView_Employees.SelectedIndex];
-                NavigationService.Navigate(Pages.EditPage);
-                
+                NavigationService.Navigate(Pages.Log_inPage);
+            }
+            if (res == MessageBoxResult.Cancel)
+            {
+                NavigationService.Navigate(Pages.View_OnlyPage);
+                Load();
+                listView_Employees.Items.Refresh();
             }
         }
 
-        
+        private void buttonChange_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult res = MessageBox.Show("Необходим вход в систему.", "Для получения полного доступа к системе необходимо войти.", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+            if (res == MessageBoxResult.OK)
+            {
+                NavigationService.Navigate(Pages.Log_inPage);
+            }
+            if (res == MessageBoxResult.Cancel)
+            {
+                NavigationService.Navigate(Pages.View_OnlyPage);
+                Load();
+                listView_Employees.Items.Refresh();
+            }
+        }
+
+        private void buttonAdd_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult res = MessageBox.Show("Необходим вход в систему.", "Для получения полного доступа к системе необходимо войти.", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+            if (res == MessageBoxResult.OK)
+            {
+                NavigationService.Navigate(Pages.Log_inPage);
+            }
+            if (res == MessageBoxResult.Cancel)
+            {
+                NavigationService.Navigate(Pages.View_OnlyPage);
+                Load();
+                listView_Employees.Items.Refresh();
+            }
+        }
     }
 }
